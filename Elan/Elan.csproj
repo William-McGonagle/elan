@@ -26,7 +26,11 @@
     <None Remove="Elan\Util\CodeMap.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Elan\UtilStored\MIMEMap.txt" />
-    <None Include="Elan\UtilStored\CodeMap.txt" />
+    <None Include="Elan\UtilStored\MIMEMap.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Elan\UtilStored\CodeMap.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

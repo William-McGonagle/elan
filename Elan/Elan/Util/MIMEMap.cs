@@ -19,7 +19,7 @@ namespace Elan.Util
         public static void loadMIMETypes() {
 
             map = new Dictionary<string, string>();
-            string path = "/Users/mcgonaglew/Projects/Elan/Elan/Elan/UtilStored/MIMEMap.txt";
+            string path = "Elan/UtilStored/MIMEMap.txt";
             string[] MIMETypes = File.ReadAllLines(path);
 
             for (int i = 0; i < MIMETypes.Length; i++)

@@ -21,7 +21,7 @@ namespace Elan.Elan.Util
         {
 
             map = new Dictionary<string, string>();
-            string path = "/Users/mcgonaglew/Projects/Elan/Elan/Elan/UtilStored/CodeMap.txt";
+            string path = "Elan/UtilStored/CodeMap.txt";
             string[] HttpCodes = File.ReadAllLines(path);
 
             for (int i = 0; i < HttpCodes.Length; i++)

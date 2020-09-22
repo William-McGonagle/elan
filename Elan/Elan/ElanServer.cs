@@ -60,9 +60,7 @@ namespace Elan
                     HttpRequest req = HttpParser.HttpParser.ParseRequest(msg);
 
                     string url = req.path;
-                    bool furfilled = false;
-
-                    HttpResponse res = new HttpResponse();
+                    HttpResponse res = null;
 
                     for (int i = 0; i < endpointPaths.Count; i++)
                     {
@@ -70,7 +68,6 @@ namespace Elan
                         if (regexPaths[i].IsMatch(url))
                         {
 
-                            furfilled = true;
                             res = endpointPaths[i].RunEndpoint(req);
                             break;
 
@@ -78,11 +75,14 @@ namespace Elan
 
                     }
 
-                    if (furfilled == false) res = dontReturn(req);
+                    // Make sure there is always a response.
+                    if (res == null) res = dontReturn(req);
 
+                    // Generate Response from Response Variable
                     byte[] output = HttpParser.HttpParser.GenerateResponse(res);
                     ns.Write(output, 0, output.Length);
 
+                    // Close the Connection
                     ns.Close();
                     client.Dispose();
 
