@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\..\Desktop\Elan\%24{Configuration}</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+    <OutputPath>..\..\..\Desktop\Elan\%24{Configuration}</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Elan\" />
+    <Folder Include="Elan\Endpoints\" />
+    <Folder Include="Elan\Util\" />
+    <Folder Include="Elan\UtilStored\" />
+    <Folder Include="Elan\HttpParser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Elan\Util\MIMEMap.txt" />
+    <None Remove="Elan\Util\CodeMap.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Elan\UtilStored\MIMEMap.txt" />
+    <None Include="Elan\UtilStored\CodeMap.txt" />
+  </ItemGroup>
+</Project>
